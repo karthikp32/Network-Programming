@@ -1,13 +1,5 @@
 #Using file interface in Python which wraps an underlying interface
+import socket 
 
-
-#write to a file call temp.txt
-fileObject = open("temp.txt", 'w')
-fileObject.write('hello world')
-fileObject.close()
-
-
-#open temp.txt and read from it
-fileObject = open("temp.txt", 'r')
-print(fileObject.read())
-fileObject.close()
+udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+udp_socket.bind('0.0.0.0')
